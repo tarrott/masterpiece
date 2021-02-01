@@ -1,0 +1,43 @@
+{{ if .Site.Taxonomies.books.Count .LinkTitle }}
+<article class="post-entry">
+    <h2>Books ({{ .Site.Taxonomies.books.Count .LinkTitle }})</h2>
+    <a class="entry-link" href="/books/{{ .LinkTitle  }}"></a>
+</article>
+{{ end }}
+
+{{ if .Site.Taxonomies.courses.Count .LinkTitle }}
+<article class="post-entry">
+    <h2>Courses ({{ .Site.Taxonomies.courses.Count .LinkTitle }})</h2>
+    <a class="entry-link" href="/courses/{{ .LinkTitle  }}"></a>
+</article>
+{{ end }}
+
+{{ if .Site.Taxonomies.lectures.Count .LinkTitle }}
+<article class="post-entry">
+    <h2>Lectures ({{ .Site.Taxonomies.lectures.Count .LinkTitle }})</h2>
+    <a class="entry-link" href="/lectures/{{ .LinkTitle  }}"></a>
+</article>
+{{ end }}
+
+{{ if .Site.Taxonomies.tutorials.Count .LinkTitle }}
+<article class="post-entry">
+    <h2>Tutorials ({{ .Site.Taxonomies.tutorials.Count .LinkTitle }})</h2>
+    <a class="entry-link" href="/tutorials/{{ .LinkTitle  }}"></a>
+</article>
+{{ end }}
+
+{{ if .Site.Taxonomies.labs.Count .LinkTitle }}
+<article class="post-entry">
+    <h2>Labs ({{ .Site.Taxonomies.labs.Count .LinkTitle }})</h2>
+    <a class="entry-link" href="/labs/{{ .LinkTitle  }}"></a>
+</article>
+{{ end }}
+
+<article class="post-entry">
+    <h4>Back to {{ .Parent.Title }}</h4>
+    <a class="entry-link" href="{{ .Parent.Permalink }}"></a>
+</article>
+
+<br />
+<h2>Concepts</h2>
+<br/>

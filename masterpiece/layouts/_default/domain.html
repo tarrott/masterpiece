@@ -1,0 +1,27 @@
+<br />
+
+{{ if .Site.Taxonomies.references.Count .LinkTitle }}
+<article class="post-entry">
+    <h4>references ({{ .Site.Taxonomies.references.Count .LinkTitle }})</h4>
+    <a class="entry-link" href="/references/{{ .LinkTitle  }}"></a>
+</article>
+{{ end }}
+
+{{ if .Site.Taxonomies.podcasts.Count .LinkTitle }}
+<article class="post-entry">
+    <h4>podcasts ({{ .Site.Taxonomies.podcasts.Count .LinkTitle }})</h4>
+    <a class="entry-link" href="/podcasts/{{ .LinkTitle  }}"></a>
+</article>
+{{ end }}
+
+{{ if .Site.Taxonomies.blogs.Count .LinkTitle }}
+<article class="post-entry">
+    <h4>blogs ({{ .Site.Taxonomies.blogs.Count .LinkTitle }})</h4>
+    <a class="entry-link" href="/blogs/{{ .LinkTitle  }}"></a>
+</article>
+{{ end }}
+
+<article class="post-entry">
+    <h4>Back to {{ .Parent.Title }}</h4>
+    <a class="entry-link" href="{{ .Parent.Permalink  }}"></a>
+</article>

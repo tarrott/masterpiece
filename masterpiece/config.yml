@@ -1,0 +1,50 @@
+baseURL: "http://example.org/"
+languageCode: "en-us"
+title: "Masterpiece"
+paginate: 10
+theme: "PaperMod"
+
+taxonomies:
+    book: books
+    course: courses
+    lecture: lectures
+    tutorial: tutorials
+    lab: labs
+    podcast: podcasts
+    blog: blogs
+    reference: references
+
+languages:
+    en:
+        languageName: "English"
+        weight: 1
+        menu:
+            main:
+            - name: Resources
+              url: resources/
+              weight: 1
+            - name: Progress
+              url: progress/
+              weight: 2
+            - name: About
+              url: about/
+              weight: 3
+            - name: Search
+              url: search/
+              weight: 4
+
+# Enable Search
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+params:
+  mainSections:
+    - architecture
+    - computer-science
+    - data-engineering
+    - software-engineering
+    - design
+  hideSummary: true
