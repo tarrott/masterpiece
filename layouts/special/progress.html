@@ -1,0 +1,60 @@
+{{- define "main" }}
+
+{{ $todo := "#FF7597"}}
+{{ $doing := "#FCD736"}}
+{{ $done := "#03DAC5"}}
+<div style="text-align: center">
+    <p style="color:{{ $todo }}">TODO</p>
+    <p style="color:{{ $doing }}">DOING</p>
+    <p style="color:{{ $done }}">DONE</p>
+</div>
+<br>
+
+<section>
+    {{ range $pages := where site.Sections "Type" "in" site.Params.mainSections }}
+        <h1 style="">{{.Title}}</h1>
+        {{ range $pages := union .RegularPages .Sections }}
+            <div style="margin-bottom: 0.5rem;">
+                {{ $subject := .LinkTitle }}
+                <h3 style="margin-left: 1rem;">{{ .Title }}</h3>
+                {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+                    {{ if ($taxonomy.Get $subject).Count }}
+                        <h4 style="margin-left: 2.5rem;">{{ $taxonomyname | title }}</h4>
+                        <ul>
+                            {{ range $value :=  $taxonomy.Get $subject}}
+                                <li style="margin-left: 4rem;">
+                                    <a 
+                                    {{ if eq .Params.status "done" }} 
+                                        style="color:{{ $done }};" 
+                                    {{ end }}
+                                    {{ if eq .Params.status "doing" }} 
+                                        style="color:{{ $doing }};" 
+                                    {{ else }}
+                                        style="color:{{ $todo }};" 
+                                    {{ end }}
+                                    href="{{ .Permalink}}">{{ .Title }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                {{ end }}
+            </div>
+        {{ end }}
+        <br>
+    {{ end }}
+</section>
+
+<br/>
+<article class="post-single">
+  <div class="post-content" style="text-align: center">
+    {{- partial "anchored_headings.html" .Content -}}
+  </div>
+</article>
+
+<br />
+<article class="post-entry">
+    <h3 style="text-align: center">Back to {{ .Parent.Title }}</h3>
+    <a class="entry-link" href="{{ .Parent.Permalink }}"></a>
+</article>
+
+{{- end  }}{{/* end main */}}

@@ -21,7 +21,7 @@
 
 {{- $pages := union .RegularPages .Sections }}
 {{- if .IsHome }}
-{{- $pages = where site.Sections "Type" "in" site.Params.mainSections }}
+  {{- $pages = where site.Sections "Type" "in" site.Params.mainSections }}
 {{- end}}
 
 {{ $paginator := .Paginate $pages }}
