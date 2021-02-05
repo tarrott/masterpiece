@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-draft: halffalse
+draft: false
 {{ replace (.Dir | after 10) "/" "" }}: ['']
 ---
 
