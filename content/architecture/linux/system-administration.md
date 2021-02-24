@@ -14,3 +14,11 @@ Add `service` command to path: `export PATH="$PATH:/usr/sbin"`
 ## Hard Drive monitoring
 - `apt install smartmontools`
     - `smartctl -V`
+
+
+## Release Upgrade
+
+### Ubuntu
+1. `apt update && apt upgrade`
+2. `do-release-upgrade`
+    - if fails `apt dist-upgrade`
