@@ -21,4 +21,10 @@ Add `service` command to path: `export PATH="$PATH:/usr/sbin"`
 ### Ubuntu
 1. `apt update && apt upgrade`
 2. `do-release-upgrade`
-    - if fails `apt dist-upgrade`
+    - if it fails `apt dist-upgrade`
+    - if a package is broken or cannot be updated then try holding it
+
+#### Hold a package (apt)
+- Hold a package: `sudo apt-mark hold <package-name>`
+- Remove the hold: `sudo apt-mark unhold <package-name>`
+- Show all packages on hold: `sudo apt-mark showhold`
