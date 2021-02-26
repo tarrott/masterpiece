@@ -23,6 +23,7 @@ Add `service` command to path: `export PATH="$PATH:/usr/sbin"`
 2. `do-release-upgrade`
     - if it fails `apt dist-upgrade`
     - if a package is broken or cannot be updated then try holding it
+    - if ssh connection is lost and not using `tmux`/`screen` then resume upgrade with: `dpkg --configure -a`
 
 #### Hold a package (apt)
 - Hold a package: `sudo apt-mark hold <package-name>`
