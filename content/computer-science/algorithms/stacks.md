@@ -5,3 +5,9 @@ draft: false
 weight: 7
 ---
 
+- O(1) for push, pop, top, isEmpty
+
+## Common applications
+- function calls / recursion
+- undo in an editor
+- balanced parentheses
